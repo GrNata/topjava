@@ -49,6 +49,7 @@ public abstract class AbstractUserServiceTest extends AbstractServiceTest {
 
     @Test
     void get() throws Exception {
+        System.out.println("SERVICE = "+service);
         User user = service.get(ADMIN_ID);
         USER_MATCHER.assertMatch(user, ADMIN);
     }

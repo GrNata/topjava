@@ -19,7 +19,6 @@ import static ru.javawebinar.topjava.util.Util.isBetweenHalfOpen;
 //import static ru.javawebinar.topjava.util.TimeUtil.isBetweenHalfOpen;
 
 public class MealsUtil {
-    public static final int DEFAULT_CALORIES_PER_DAY = 2000;
 
     public static final List<Meal> MEALS = Arrays.asList(
             new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 10, 0), "Завтрак", 500),

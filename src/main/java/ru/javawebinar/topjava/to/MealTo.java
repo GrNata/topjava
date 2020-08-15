@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class MealTo extends BaseTo {
 
-    @JsonView(View.JsonREST.class)
+//    @JsonView(View.JsonREST.class)
     private final LocalDateTime dateTime;
 
     private final String description;
@@ -63,12 +63,12 @@ public class MealTo extends BaseTo {
         return Objects.hash(id, dateTime, description, calories, excess);
     }
 
-    @JsonGetter
-    @JsonView(View.JsonUI.class)
-    @JsonFormat(pattern = DateTimeUtil.DATE_TIME_PATTERN)
-    public LocalDateTime getDateTimeUI() {
-        return dateTime;
-    }
+//    @JsonGetter
+//    @JsonView(View.JsonUI.class)
+//    @JsonFormat(pattern = DateTimeUtil.DATE_TIME_PATTERN)
+//    public LocalDateTime getDateTimeUI() {
+//        return dateTime;
+//    }
 
     @Override
     public String toString() {

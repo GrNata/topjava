@@ -32,7 +32,7 @@ public class JacksonObjectMapper extends ObjectMapper {
         setSerializationInclusion(JsonInclude.Include.NON_NULL);
 
 //      https://stackoverflow.com/questions/22875642/jackson-set-default-view
-        setConfig(getSerializationConfig().withView(View.JsonREST.class));
+//        setConfig(getSerializationConfig().withView(View.JsonREST.class));
     }
 
     public static ObjectMapper getMapper() {

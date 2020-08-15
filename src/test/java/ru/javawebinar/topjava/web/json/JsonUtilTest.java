@@ -29,11 +29,11 @@ class JsonUtilTest {
         MEAL_MATCHER.assertMatch(meals, MEALS);
     }
 
-    @Test
-    public void writeWithView() throws Exception {
-        ObjectWriter uiWriter = JacksonObjectMapper.getMapper().writerWithView(View.JsonUI.class);
-        String json = JsonUtil.writeValue(ADMIN_MEAL1, uiWriter);
-        System.out.println(json);
-        assertThat(json, containsString("dateTimeUI"));
-    }
+//    @Test
+//    public void writeWithView() throws Exception {
+//        ObjectWriter uiWriter = JacksonObjectMapper.getMapper().writerWithView(View.JsonUI.class);
+//        String json = JsonUtil.writeValue(ADMIN_MEAL1, uiWriter);
+//        System.out.println(json);
+//        assertThat(json, containsString("dateTimeUI"));
+//    }
 }

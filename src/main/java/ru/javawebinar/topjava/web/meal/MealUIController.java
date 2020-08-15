@@ -9,7 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.javawebinar.topjava.View;
-import ru.javawebinar.topjava.View.ValidatedUI;
+//import ru.javawebinar.topjava.View.ValidatedUI;
 import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.to.MealTo;
 import ru.javawebinar.topjava.util.ValidationUtil;
@@ -24,14 +24,14 @@ public class MealUIController extends AbstractMealController {
 
     @Override
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    @JsonView(View.JsonUI.class)
+//    @JsonView(View.JsonUI.class)
     public List<MealTo> getAll() {
         return super.getAll();
     }
 
     @Override
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @JsonView(View.JsonUI.class)
+//    @JsonView(View.JsonUI.class)
     public Meal get(@PathVariable int id) {
         return super.get(id);
     }
@@ -44,7 +44,8 @@ public class MealUIController extends AbstractMealController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createOrUpdate(@Validated(ValidatedUI.class) Meal meal, BindingResult result) {
+//    public ResponseEntity<String> createOrUpdate(@Validated(ValidatedUI.class) Meal meal, BindingResult result) {
+    public ResponseEntity<String> createOrUpdate(@Validated Meal meal, BindingResult result) {
         if (result.hasErrors()) {
             return ValidationUtil.getErrorResponse(result);
         }
@@ -58,7 +59,7 @@ public class MealUIController extends AbstractMealController {
 
     @Override
     @GetMapping(value = "/filter", produces = MediaType.APPLICATION_JSON_VALUE)
-    @JsonView(View.JsonUI.class)
+//    @JsonView(View.JsonUI.class)
     public List<MealTo> getBetween(
             @RequestParam @Nullable LocalDate startDate,
             @RequestParam @Nullable LocalTime startTime,

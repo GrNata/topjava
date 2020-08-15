@@ -47,6 +47,7 @@ public class MealUIController extends AbstractMealController {
 //    public ResponseEntity<String> createOrUpdate(@Validated(ValidatedUI.class) Meal meal, BindingResult result) {
     public ResponseEntity<String> createOrUpdate(@Validated Meal meal, BindingResult result) {
         if (result.hasErrors()) {
+            // TODO change to exception handler
             return ValidationUtil.getErrorResponse(result);
         }
         if (meal.isNew()) {
